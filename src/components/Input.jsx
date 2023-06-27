@@ -1,5 +1,4 @@
-import Img from "../img/img.png";
-import Attach from "../img/attach.png";
+
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
@@ -7,6 +6,7 @@ import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from "firebase
 import {v4 as uuid} from "uuid"
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../firebase";
+import { FaImage, FaPaperPlane } from "react-icons/fa6";
 
 const Input = () => {
   
@@ -70,16 +70,18 @@ const Input = () => {
     setText("");
     setImg(null);
   }
+
+  
   return (
     <div className="input">
       <input type="text" placeholder="Type Something" onChange={(e) => setText(e.target.value)} value={text}/>
       <div className="send">
-        <img src={Attach} alt="" />
         <input type="file" style={{display: "none"}} id="user-input" onChange={(e) => setImg(e.target.files[0])}/>
         <label htmlFor="user-input">
-          <img src={Img} alt="" />
+           <FaImage className="icon"/>
+    
         </label>
-        <button onClick={handleSend}>Send</button>
+        <FaPaperPlane className="icon" onClick={handleSend} />
       </div>
     </div>
   )

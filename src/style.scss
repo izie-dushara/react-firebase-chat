@@ -82,17 +82,9 @@
 }
 
 .home {
-    background-color: #a7bcff;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     .container{
-        border: 1px solid white;
-        border-radius: 10px;
-        width: 65%;
-        height: 80%;
+        height: 100vh;
+        
         display: flex;
         overflow: hidden; 
     }
@@ -105,7 +97,7 @@
             display: flex;
             align-items: center;
             background-color: #2f2d52;
-            height: 50px;
+            height: 70px;
             padding: 10px;
             justify-content: space-between;
             color: #ddddf7;
@@ -132,8 +124,12 @@
                     color: #ddddf7;
                     border: none;
                     cursor: pointer;
-                    padding: 3px;
-                    border-radius: 5px;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             } 
             
@@ -194,7 +190,7 @@
         .chat {
             flex: 2;
             .chat-info {
-                height: 50px;
+                height: 70px;
                 background-color: #5d5b8d;
                 display: flex;
                 align-items: center;
@@ -216,7 +212,7 @@
             .messages {
                 background-color: #ddddf7;
                 padding: 10px;
-                height: calc(100% - 100px);
+                height: calc(100% - 120px);
                 overflow-y: scroll;
 
                 .message {
@@ -292,22 +288,21 @@
 
                 .send {
                     display: flex;
+                    justify-content: center;
                     align-items: center;
                     gap: 10px;
-                    
-                    img {
-                        height: 24px;
+
+                    .icon {
+                        font-size: 1.5rem;
+                        color: gray;
                         cursor: pointer;
+                        margin: 0.5rem;
+                        &:hover{
+                            color: black
+                        }
                     }
 
-                    button {
-                        border: none;
-                        padding: 10px 15px;
-                        color: white;
-                        background-color: #8da4f1;
-                        cursor: pointer;
-                        border-radius: 10px;
-                    }
+                   
                 }
 
 
